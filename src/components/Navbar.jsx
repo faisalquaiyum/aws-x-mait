@@ -1,43 +1,41 @@
 import { Link, useLocation } from "react-router-dom";
-import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
-import { useTheme } from "../ThemeContext";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 const Navbar = () => {
-  const { darkMode, toggleTheme } = useTheme();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/about-aws", label: "About AWS" },
-    { path: "/about-mait", label: "About MAIT" },
+    { path: "/about-aws", label: "AWS" },
+    { path: "/about-mait", label: "MAIT" },
     { path: "/contact", label: "Contact" },
   ];
 
   return (
     <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-200/20 dark:border-gray-700/30">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+      <div className="container mx-auto px-8 md:px-12">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center group">
-              <span className="text-2xl font-bold bg-gradient-to-r from-aws-orange to-blue-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-                AWS × MAIT
+              <span className="text-xl font-bold text-white group-hover:scale-105 transition-transform duration-300">
+                AWS×MAIT
               </span>
             </Link>
           </div>
 
           {/* Centered Navigation */}
-          <div className="hidden md:flex space-x-1 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden md:flex space-x-10 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                className={`py-2 font-medium text-base relative transition-all duration-300 inline-block ${
                   location.pathname === item.path
-                    ? "bg-aws-orange text-white shadow-lg"
-                    : "text-gray-700 dark:text-gray-300 hover:text-aws-orange dark:hover:text-aws-orange hover:bg-aws-orange/10"
+                    ? "text-aws-orange after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-aws-orange after:shadow-[0_0_8px_rgba(255,107,53,0.6)]"
+                    : "text-gray-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
                 }`}
               >
                 {item.label}
@@ -47,20 +45,17 @@ const Navbar = () => {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-aws-orange hover:text-white transition-all duration-300 hover:scale-110"
+            {/* Login Button */}
+            <a
+              href="#"
+              className="hidden md:flex items-center px-6 py-2.5 rounded-full border-[2px] border-gray-800/40 bg-gray-900/60 backdrop-blur-xl text-gray-300 font-medium text-base hover:border-white/50 hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.15),inset_0_0_15px_rgba(255,255,255,0.05)]"
             >
-              {darkMode ? (
-                <FaSun className="text-lg" />
-              ) : (
-                <FaMoon className="text-lg" />
-              )}
-            </button>
+              Login
+            </a>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-aws-orange hover:text-white transition-all duration-300"
+              className="md:hidden p-3 rounded-full border-[2px] border-gray-800/40 bg-gray-900/60 backdrop-blur-xl text-gray-300 hover:border-white/50 hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.15),inset_0_0_15px_rgba(255,255,255,0.05)]"
             >
               {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
@@ -69,25 +64,32 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         <div
-          className={`md:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? "max-h-64 pb-4" : "max-h-0"
+          className={`md:hidden absolute left-0 right-0 top-full transition-all duration-300 overflow-hidden ${
+            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="flex flex-col space-y-2 pt-4">
+          <div className="mx-4 mt-2 mb-4 p-6 rounded-3xl bg-gray-900/80 backdrop-blur-2xl border border-gray-800/30 shadow-2xl flex flex-col space-y-4 items-center">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                className={`py-3 font-medium text-base relative transition-all duration-300 inline-block ${
                   location.pathname === item.path
-                    ? "bg-aws-orange text-white shadow-lg"
-                    : "text-gray-700 dark:text-gray-300 hover:text-aws-orange dark:hover:text-aws-orange hover:bg-aws-orange/10"
+                    ? "text-aws-orange after:content-[''] after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-aws-orange after:shadow-[0_0_8px_rgba(255,107,53,0.6)]"
+                    : "text-gray-300 hover:text-white after:content-[''] after:absolute after:bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
+            {/* Login button in mobile */}
+            <a
+              href="#"
+              className="px-6 py-3 rounded-full border-[2px] border-gray-800/40 bg-gray-900/60 backdrop-blur-xl text-gray-300 font-medium text-base hover:border-white/50 transition-all duration-300 text-center hover:shadow-[0_0_15px_rgba(255,255,255,0.15),inset_0_0_15px_rgba(255,255,255,0.05)]"
+            >
+              Login
+            </a>
           </div>
         </div>
       </div>
