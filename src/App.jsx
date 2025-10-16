@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./ThemeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import AboutAWS from "./components/AboutAWS";
-import AboutMAIT from "./components/AboutMAIT";
-import Contact from "./components/Contact";
+import Home from "./pages/Home";
+import AboutAWS from "./pages/AboutAWS";
+import AboutMAIT from "./pages/AboutMAIT";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
