@@ -35,11 +35,11 @@ const Home = () => {
         <div className="text-center space-y-5 md:space-y-7">
           {/* Title */}
           <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="text-[#FF9900]">AWS & MAIT</span>
-            <span className="text-gray-300">, </span>
-            <span className="text-gray-200">together</span>
+            <span className="text-[#FF9900]">AWS×MAIT, </span>
+            <span className="text-gray-300">empowering </span>
+            {/* <span className="text-gray-200"></span> */}
             <br />
-            <span className="text-gray-200">make better future!</span>
+            <span className="text-gray-200">the next generation!</span>
           </h1>
 
           {/* Subtitle */}
@@ -129,8 +129,6 @@ const Home = () => {
       {/* Feature Section */}
       <Feature />
     </div>
-
-    
   );
 };
 

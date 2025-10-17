@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h4 className="text-base font-semibold mb-4 text-white">
               Quick Links
             </h4>
@@ -93,6 +93,12 @@ const Footer = () => {
                 <FaEnvelope className="text-[#aab7b8] flex-shrink-0" />
                 <span>contact@awsxmait.com</span>
               </a>
+              <a
+                href="/contact"
+                className="text-[#aab7b8] hover:text-white transition-colors duration-200"
+              >
+                Visit Contact Page
+              </a>
             </div>
           </div>
 
@@ -106,7 +112,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.url}
-                  className="w-10 h-10 bg-transparent hover:bg-[#2a2e35] rounded-md flex items-center justify-center text-base text-[#aab7b8] hover:text-white transition-all duration-200"
+                  className="w-10 h-10 bg-transparent border border-[#2a2e35] hover:bg-[#2a2e35] hover:border-white rounded-md flex items-center justify-center text-base text-[#aab7b8] hover:text-white transition-colors duration-200"
                   title={social.name}
                 >
                   {social.icon}
@@ -120,7 +126,7 @@ const Footer = () => {
         <div className="border-t border-[#2a2e35] mt-10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-[#aab7b8] text-sm">
-              © {currentYear}, AWS × MAIT Partnership. All rights reserved.
+              © {currentYear}, AWS×MAIT Partnership. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a
