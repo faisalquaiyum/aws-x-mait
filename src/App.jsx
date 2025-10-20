@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import AboutAWS from "./pages/AboutAWS";
 import AboutMAIT from "./pages/AboutMAIT";
 import Contact from "./pages/Contact";
+import Teams from "./pages/Teams";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/teams" element={<Teams />} />
             <Route path="/about-aws" element={<AboutAWS />} />
             <Route path="/about-mait" element={<AboutMAIT />} />
             <Route path="/contact" element={<Contact />} />
