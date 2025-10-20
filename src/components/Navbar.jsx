@@ -33,6 +33,7 @@ const Navbar = () => {
 
   const navItems = [
     { path: "/", label: "Home" },
+    { path: "/teams", label: "Teams" },
     { path: "/about-aws", label: "AWS" },
     { path: "/about-mait", label: "MAIT" },
     { path: "/contact", label: "Contact" },
