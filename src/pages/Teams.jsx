@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const sampleTeam = [
   {
     id: 1,
-    name: "Dhananjay Bhardwaj ",
+    name: "Dhananjay Bhardwaj",
     role: "Event management ",
     img: "images/event/JayBhardwaj.jpg",
     socials: {
@@ -111,10 +111,10 @@ const sampleTeam = [
     id: 10,
     name: "Abhishek gupta",
     role: "Technical",
-    img: "images/technical/Abhishek_gupta.jpg",
+    img: "images/technical/AbhishekGupta.jpg",
     socials: {
-      linkedin: "",
-      instagram: "",
+      linkedin: "https://www.linkedin.com/mynetwork/",
+      instagram: "https://www.instagram.com/abhishekgupta0720/",
     },
     group: "Technical",
   },
@@ -130,6 +130,19 @@ const sampleTeam = [
         "https://www.instagram.com/sukriti_95?igsh=MW8wODhzZWoyamkzNw==",
     },
     group: "Social",
+  },
+  {
+    id: 12,
+    name: "Jatin Kumar",
+    role: "Technical",
+    img: "images/technical/jatinKumar.jpg",
+    socials: {
+      linkedin:
+        "https://www.linkedin.com/in/jatin-kumar-a5655b30a",
+      instagram:
+        "https://www.instagram.com/ijatinydv",
+    },
+    group: "Technical",
   },
 ];
 
