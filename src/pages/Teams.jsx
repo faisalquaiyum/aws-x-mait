@@ -3,20 +3,9 @@ import React, { useState } from "react";
 const sampleTeam = [
   {
     id: 1,
-    name: "Md Faisal Quaiyum",
-    role: "Technical",
-    img: "src/assets/technical/Faisal.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/md-faisal-quaiyum-b943a922b/",
-      instagram: "https://www.instagram.com/faisalquaiyum/",
-    },
-    group: "Technical",
-  },
-  {
-    id: 2,
     name: "Dhananjay Bhardwaj ",
     role: "Event management ",
-    img: "src/assets/event/Jay Bhardwaj.jpg",
+    img: "images/event/JayBhardwaj.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/dhananjay-bhardwaj-69775528a/",
       instagram: "https://www.instagram.com/jayybhardwaj.__/",
@@ -24,23 +13,23 @@ const sampleTeam = [
     group: "Event management",
   },
   {
-    id: 3,
-    name: "Ridhi Garg",
+    id: 2,
+    name: "Pari Goel",
     role: "PR",
-    img: "src/assets/PR/ridhi gargg.jpeg",
+    img: "images/PR/PariGoel.jpeg",
     socials: {
-      linkedin: "https://www.linkedin.com/in/ridhigarg1602/",
+      linkedin:
+        "https://www.linkedin.com/in/pari-goel-97208a325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       instagram:
-        "https://www.instagram.com/_ridhi.garg/?igsh=MTl3cXA4c3FhMnhsMw%3D%3D&utm_source=qr",
+        "https://www.instagram.com/parigoel06?igsh=MWlyMG8wenphMnJ0bw%3D%3D&utm_source=qr",
     },
     group: "PR",
   },
-  
   {
-    id: 4,
+    id: 3,
     name: "Yuvraj Vikram Singh",
     role: "Content",
-    img: "src/assets/content/Yuvraj Vikram Singh.jpg",
+    img: "images/content/YuvrajVikramSingh.jpg",
     socials: {
       linkedin:
         "https://www.linkedin.com/in/yuvraj2007?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=member_android",
@@ -49,22 +38,33 @@ const sampleTeam = [
     group: "Content",
   },
   {
-    id: 5,
+    id: 4,
     name: "Saksham Gupta",
     role: "",
-    img: "src/assets/saksham gupta.jpg",
+    img: "images/others/sakshamGupta.jpg",
     socials: {
       linkedin:
         "https://www.linkedin.com/in/saksham-gupta-057669126?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "",
+      instagram: "https://www.instagram.com/sakshamgupta2001/",
     },
     group: "",
+  },
+  {
+    id: 5,
+    name: "Md Faisal Quaiyum",
+    role: "Technical",
+    img: "images/technical/Faisal.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/md-faisal-quaiyum-b943a922b/",
+      instagram: "https://www.instagram.com/faisalquaiyum/",
+    },
+    group: "Technical",
   },
   {
     id: 6,
     name: "Yatin Kumar",
     role: "",
-    img: "src/assets/yatin (2) - Yatin Kumar.jpeg",
+    img: "images/others/YatinKumar.jpeg",
     socials: {
       linkedin: "https://www.linkedin.com/in/yatin-kumar-069861319/",
       instagram: "https://www.instagram.com/yatin_1220/?hl=en",
@@ -75,7 +75,7 @@ const sampleTeam = [
     id: 7,
     name: "Shubham Jha",
     role: "",
-    img: "src/assets/Shubham Jha.jpg",
+    img: "images/others/ShubhamJha.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/shubham-jha-a37a49263/",
       instagram: "https://www.instagram.com/_shubham.2028/",
@@ -86,7 +86,7 @@ const sampleTeam = [
     id: 8,
     name: "Gaurang Dhall",
     role: "Event Management",
-    img: "src/assets/event/Gaurang Dhall.jpg",
+    img: "images/event/GaurangDhall.jpg",
     socials: {
       linkedin:
         "https://www.linkedin.com/in/gaurang-dhall-603155292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -97,14 +97,13 @@ const sampleTeam = [
   },
   {
     id: 9,
-    name: "Pari Goel",
+    name: "Ridhi Garg",
     role: "PR",
-    img: "src/assets/PR/Pari Goel.jpeg",
+    img: "images/PR/ridhigargg.jpeg",
     socials: {
-      linkedin:
-        "https://www.linkedin.com/in/pari-goel-97208a325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      linkedin: "https://www.linkedin.com/in/ridhigarg1602/",
       instagram:
-        "https://www.instagram.com/parigoel06?igsh=MWlyMG8wenphMnJ0bw%3D%3D&utm_source=qr",
+        "https://www.instagram.com/_ridhi.garg/?igsh=MTl3cXA4c3FhMnhsMw%3D%3D&utm_source=qr",
     },
     group: "PR",
   },
@@ -112,7 +111,7 @@ const sampleTeam = [
     id: 10,
     name: "Abhishek gupta",
     role: "Technical",
-    img: "src/assets/Abhishek_gupta.jpg",
+    img: "images/technical/Abhishek_gupta.jpg",
     socials: {
       linkedin: "",
       instagram: "",
@@ -123,7 +122,7 @@ const sampleTeam = [
     id: 11,
     name: "Sukriti Chauhan",
     role: "social media",
-    img: "src/assets/social/Sukriti Shakuntala.jpg",
+    img: "images/social/SukritiShakuntala.jpg",
     socials: {
       linkedin:
         "https://www.linkedin.com/in/sukriti-chauhan-b46619344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -139,21 +138,21 @@ const featuredData = [
     id: 1,
     name: "Dr. Bhaskar Kapoor",
     role: "faculty",
-    img: "src/assets/faculty/drBhaskar.jpeg",
+    img: "images/faculty/drBhaskar.jpeg",
     desc: "Empowering students with mentorship that blends wisdom",
   },
   {
     id: 2,
     name: "Dr. Bhoomi Gupta",
     role: "faculty",
-    img: "src/assets/faculty/drBhoomi.jpeg",
+    img: "images/faculty/drBhoomi.jpeg",
     desc: "A communications lead who connects people and ideas",
   },
   {
     id: 3,
     name: "Dr. Monika bhardwaj",
     role: "faculty",
-    img: "src/assets/faculty/drMonika.jpeg",
+    img: "images/faculty/drMonika.jpeg",
     desc: "Organizes memorable experiences and events that leave a lasting impact",
   },
 ];
@@ -234,7 +233,6 @@ function FeaturedPanel({ item }) {
             alt={item.name}
             className="w-28 h-28 rounded-full object-cover ring-4 ring-[#2a2e35] group-hover:ring-[#FF9900] transition-all duration-300"
           />
-          <div className="absolute inset-0 rounded-full bg-[#FF9900]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         <div className="flex-1">
           <h3
@@ -279,7 +277,8 @@ const Teams = () => {
         {/* Featured Leadership */}
         <div className="max-w-6xl mx-auto mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-            Leadership <span className="text-[#FF9900]">Team</span>
+            Leadership Team
+            {/* Leadership <span className="text-[#FF9900]">Team</span> */}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredData.map((item) => (
@@ -291,7 +290,8 @@ const Teams = () => {
         {/* Filter Section */}
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-6">
-            Our <span className="text-[#FF9900]">Members</span>
+            Our Members
+            {/* Our <span className="text-[#FF9900]">Members</span> */}
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {[
