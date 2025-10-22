@@ -59,9 +59,20 @@ const sampleTeam = [
       instagram: "https://www.instagram.com/faisalquaiyum/",
     },
     group: "Technical",
+  }, 
+   {
+    id: 6,
+    name: "Dhruv Chetiwal",
+    role: "Technical",
+    img: "images/technical/Dhruv.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/dhruv-chetiwal-197809371/",
+      instagram: "https://www.instagram.com/dhruv_chetiwal_/",
+    },
+    group: "Technical",
   },
   {
-    id: 6,
+    id: 7,
     name: "Yatin Kumar",
     role: "",
     img: "images/others/YatinKumar.jpeg",
@@ -72,7 +83,7 @@ const sampleTeam = [
     group: "",
   },
   {
-    id: 7,
+    id: 8,
     name: "Shubham Jha",
     role: "",
     img: "images/others/ShubhamJha.jpg",
@@ -83,7 +94,7 @@ const sampleTeam = [
     group: "",
   },
   {
-    id: 8,
+    id: 9,
     name: "Gaurang Dhall",
     role: "Event Management",
     img: "images/event/GaurangDhall.jpg",
@@ -96,7 +107,7 @@ const sampleTeam = [
     group: "Event Management",
   },
   {
-    id: 9,
+    id: 10,
     name: "Ridhi Garg",
     role: "PR",
     img: "images/PR/ridhigargg.jpeg",
@@ -108,7 +119,7 @@ const sampleTeam = [
     group: "PR",
   },
   {
-    id: 10,
+    id: 11,
     name: "Abhishek gupta",
     role: "Technical",
     img: "images/technical/AbhishekGupta.jpg",
@@ -119,7 +130,7 @@ const sampleTeam = [
     group: "Technical",
   },
   {
-    id: 11,
+    id: 12,
     name: "Sukriti Chauhan",
     role: "social media",
     img: "images/social/SukritiShakuntala.jpg",
@@ -132,7 +143,7 @@ const sampleTeam = [
     group: "Social",
   },
   {
-    id: 12,
+    id: 13,
     name: "Jatin Kumar",
     role: "Technical",
     img: "images/technical/jatinKumar.jpg",
