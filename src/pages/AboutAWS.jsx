@@ -7,16 +7,23 @@ import {
   FaCode,
   FaNetworkWired,
   FaCogs,
+  FaUsers,
+  FaBook,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AuroraBackground = () => (
   <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none">
     <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl animate-pulse" />
-    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF9900]/20 rounded-full filter blur-3xl animate-pulse" 
-         style={{ animationDelay: '2s' }} />
-    <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-600/20 rounded-full filter blur-3xl animate-pulse" 
-         style={{ animationDelay: '4s' }} />
+    <div
+      className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF9900]/20 rounded-full filter blur-3xl animate-pulse"
+      style={{ animationDelay: "2s" }}
+    />
+    <div
+      className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-600/20 rounded-full filter blur-3xl animate-pulse"
+      style={{ animationDelay: "4s" }}
+    />
   </div>
 );
 
@@ -81,11 +88,26 @@ const AboutAWS = () => {
   ];
 
   const stats = [
-    { number: "245+", label: "Cloud Services", icon: "☁️" },
-    { number: "32", label: "Global Regions", icon: "🌍" },
-    { number: "99.99%", label: "Uptime SLA", icon: "⚡" },
-    { number: "1M+", label: "Active Customers", icon: "🚀" },
+    { number: "245+", label: "Cloud Services", color: "text-blue-400" },
+    { number: "32", label: "Global Regions", color: "text-green-400" },
+    { number: "99.99%", label: "Uptime SLA", color: "text-orange-400" },
+    { number: "1M+", label: "Active Customers", color: "text-purple-400" },
   ];
+
+  const getGlowShadow = (colorClass) => {
+    switch (colorClass) {
+      case "text-blue-400":
+        return "hover:shadow-[0_0_20px_rgba(96,165,250,0.6)] hover:border-blue-400";
+      case "text-green-400":
+        return "hover:shadow-[0_0_20px_rgba(52,211,153,0.6)] hover:border-green-400";
+      case "text-orange-400":
+        return "hover:shadow-[0_0_20px_rgba(251,146,60,0.6)] hover:border-orange-400";
+      case "text-purple-400":
+        return "hover:shadow-[0_0_20px_rgba(192,132,252,0.6)] hover:border-purple-400";
+      default:
+        return "hover:shadow-xl";
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,8 +120,8 @@ const AboutAWS = () => {
   };
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: 50,
     },
     visible: {
@@ -113,8 +135,8 @@ const AboutAWS = () => {
   };
 
   const statVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 20,
     },
     visible: {
@@ -138,7 +160,7 @@ const AboutAWS = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
+          {/* <motion.div
             className="inline-block mb-4 sm:mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -147,9 +169,9 @@ const AboutAWS = () => {
             <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#FF9900]/10 border border-[#FF9900]/30 rounded-full text-[#FF9900] text-xs sm:text-sm font-semibold tracking-wide">
               ☁️ POWERING THE CLOUD
             </span>
-          </motion.div>
+          </motion.div> */}
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 px-4">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 px-4">
             The Global Standard for
             <br />
             <span className="bg-gradient-to-r from-[#FF9900] via-orange-500 to-amber-500 bg-clip-text text-transparent">
@@ -157,9 +179,9 @@ const AboutAWS = () => {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             Discover the unparalleled power, security, and scale of{" "}
-            <span className="text-[#FF9900] font-semibold">
+            <span className="text-white font-semibold">
               Amazon Web Services
             </span>
             —the platform fueling progress for startups, enterprises, and your
@@ -167,37 +189,26 @@ const AboutAWS = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-16 sm:mb-24 md:mb-32"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-16 sm:mb-24 md:mb-32">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              className="group relative bg-gradient-to-br from-gray-900/80 to-gray-900/40 border border-gray-700/50 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl text-center backdrop-blur-sm transition-all duration-300 hover:border-[#FF9900] hover:shadow-[0_0_20px_rgba(255,153,0,0.2)] cursor-pointer"
-              variants={statVariants}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
+              className={`bg-gray-800 border border-gray-700 p-4 sm:p-6 rounded-2xl text-center shadow-md hover:bg-gray-700 hover:scale-[1.03] hover:translate-y-[-6px] transition-all duration-200 ease-in-out ${getGlowShadow(
+                stat.color
+              )}`}
             >
-              <div className="relative z-10">
-                <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[#FF9900] to-orange-600 bg-clip-text text-transparent mb-2 sm:mb-3">
-                  {stat.number}
-                </div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-300 font-semibold tracking-wide">
-                  {stat.label}
-                </div>
+              <div
+                className={`text-3xl sm:text-4xl font-extrabold mb-1 ${stat.color}`}
+              >
+                {stat.number}
               </div>
-            </motion.div>
+              <div className="text-gray-300 text-sm sm:text-base font-semibold tracking-wider">
+                {stat.label}
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
-        
         <div className="mb-16 sm:mb-20 md:mb-32">
           <motion.div
             className="text-center mb-12 sm:mb-16 md:mb-20"
@@ -206,17 +217,16 @@ const AboutAWS = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 px-4">
+            <h2 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 px-4">
               The Cornerstones of{" "}
               <span className="text-[#FF9900]">Innovation</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
               AWS isn't just one service—it's a universe of capabilities
               designed to help you build better, faster, and smarter.
             </p>
           </motion.div>
 
-       
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6"
             variants={containerVariants}
@@ -231,17 +241,18 @@ const AboutAWS = () => {
                 variants={cardVariants}
                 whileHover={{ y: -8 }}
               >
-                
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl`}/>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl`}
+                />
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="text-4xl sm:text-5xl text-gray-400 group-hover:text-[#FF9900] transition-all duration-300 mb-4 sm:mb-5">
+                  <div className="text-3xl sm:text-4xl text-gray-400 group-hover:text-[#FF9900] transition-all duration-300 mb-4 sm:mb-5">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4 group-hover:text-[#FF9900] transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-[#FF9900] transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 flex-grow">
+                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 flex-grow">
                     {feature.description}
                   </p>
                 </div>
@@ -254,7 +265,6 @@ const AboutAWS = () => {
           </motion.div>
         </div>
 
-       
         <motion.div
           className="text-center relative"
           initial={{ opacity: 0, y: 20 }}
@@ -263,32 +273,48 @@ const AboutAWS = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF9900]/5 to-transparent blur-3xl" />
-          
+
           <div className="relative z-10 bg-gradient-to-br from-gray-900/60 to-gray-900/30 border border-gray-700/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 backdrop-blur-sm max-w-4xl mx-auto overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FF9900]/5 to-purple-600/5 opacity-50" />
+
             <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
                 Ready to Build the{" "}
-                <span className="text-[#FF9900]">Future</span>?
+                <span className="bg-gradient-to-r from-[#FF9900] to-amber-500 bg-clip-text text-transparent">
+                  Future?
+                </span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
-                Start your journey with the same tools that power Netflix, Airbnb,
-                and the world's most innovative companies.
+              <p className="text-base sm:text-lg text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+                Join AWS×MAIT and start your cloud computing journey with expert
+                guidance, hands-on workshops, and real-world projects.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center px-4">
-                <motion.button
-                  className="w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#FF9900] hover:bg-[#ec8b00] text-white text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-200 shadow-[0_0_20px_rgba(255,153,0,0.3)] hover:shadow-[0_0_30px_rgba(255,153,0,0.4)] relative overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://aws.amazon.com/getting-started/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  🚀 Explore Resources
-                </motion.button>
-                <motion.button
-                  className="w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-gray-700/50 hover:bg-gray-700 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl transition-all duration-200 border-2 border-gray-600 hover:border-[#FF9900] relative overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  💼 Join Our Society
-                </motion.button>
+                  <motion.button
+                    className="w-full sm:w-auto px-8 py-4 bg-[#FF9900] hover:bg-[#ec8b00] text-white text-base font-bold rounded-xl transition-all duration-200 shadow-[0_0_20px_rgba(255,153,0,0.3)] hover:shadow-[0_0_30px_rgba(255,153,0,0.5)] flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FaBook className="text-lg" />
+                    <span>AWS Official Resources</span>
+                  </motion.button>
+                </a>
+
+                <Link to="/teams">
+                  <motion.button
+                    className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-gray-800/50 text-white text-base font-bold rounded-xl transition-all duration-200 border-2 border-[#FF9900]/50 hover:border-[#FF9900] flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FaUsers className="text-lg" />
+                    <span>Meet Our Team</span>
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </div>

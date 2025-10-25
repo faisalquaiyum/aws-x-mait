@@ -41,7 +41,7 @@ const Footer = () => {
     {
       icon: <FaInstagram />,
       name: "Instagram",
-      url: "#",
+      url: "https://www.instagram.com/aws.academy_mates?igsh=M2p6bnFvajV3NTc0",
       color: "hover:text-pink-400",
     },
   ];
@@ -113,6 +113,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.url}
+                  target="_blank"
                   className="w-10 h-10 bg-transparent border border-[#2a2e35] hover:bg-[#2a2e35] hover:border-white rounded-md flex items-center justify-center text-base text-[#aab7b8] hover:text-white transition-colors duration-200"
                   title={social.name}
                 >

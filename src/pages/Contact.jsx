@@ -148,27 +148,34 @@ const Contact = () => {
 
       {/* Additional Resources */}
       <div className="container mx-auto px-8 md:px-12 lg:px-16 pb-16 md:pb-20">
-        <div className="bg-[#1a1d23] border border-[#2a2e35] rounded-2xl p-8 md:p-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Additional Resources
+            {/* Additional <span className="text-[#FF9900]">Resources</span> */}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {additionalResources.map((resource, index) => (
-              <div key={index} className="group">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#FF9900] transition-colors">
-                  {resource.title}
-                </h3>
-                <p className="text-gray-400 mb-4">{resource.description}</p>
-                <a
-                  href={resource.link}
-                  className="inline-flex items-center text-[#FF9900] hover:text-[#FF9900]/80 font-semibold"
-                >
-                  Learn more
-                  <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
+          <p className="text-gray-400 text-lg">
+            Quick access to helpful information and support services
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {additionalResources.map((resource, index) => (
+            <div
+              key={index}
+              className="bg-[#1a1d23] border border-[#2a2e35] hover:border-[#FF9900]/50 rounded-xl p-8 transition-all duration-300 hover:transform hover:-translate-y-2 shadow-lg group"
+            >
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-[#FF9900]/10 rounded-lg flex items-center justify-center group-hover:bg-[#FF9900]/20 transition-colors">
+                  <FaArrowRight className="text-[#FF9900] text-xl" />
+                </div>
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#FF9900] transition-colors">
+                {resource.title}
+              </h3>
+              <p className="text-[#aab7b8] leading-relaxed">
+                {resource.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
