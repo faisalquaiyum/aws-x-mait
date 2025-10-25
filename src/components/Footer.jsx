@@ -13,6 +13,7 @@ const Footer = () => {
 
   const quickLinks = [
     { name: "Home", href: "/" },
+    { name: "Teams", href: "/teams" },
     { name: "AWS", href: "/about-aws" },
     { name: "MAIT", href: "/about-mait" },
     { name: "Contact", href: "/contact" },
@@ -124,11 +125,11 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-[#2a2e35] mt-10 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-[#aab7b8] text-sm">
+          <div className="flex justify-center items-center">
+            <div className="text-[#aab7b8] text-sm text-center">
               © {currentYear}, AWS×MAIT Partnership. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <a
                 href="#"
                 className="text-[#aab7b8] hover:text-white transition-colors duration-200"
@@ -141,7 +142,7 @@ const Footer = () => {
               >
                 Terms
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

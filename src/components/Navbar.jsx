@@ -85,12 +85,12 @@ const Navbar = () => {
             </button> */}
 
             {/* Login Button */}
-            <a
+            {/* <a
               href="#"
               className="hidden md:flex items-center px-6 py-2.5 rounded-full border-[2px] border-[#2a2e35] bg-[#1a1d23] backdrop-blur-xl text-[#aab7b8] font-medium text-base hover:border-white/50 hover:text-white hover:scale-105 transition-all duration-200 hover:shadow-[0_0_15px_rgba(255,255,255,0.15),inset_0_0_15px_rgba(255,255,255,0.05)]"
             >
               Login
-            </a>
+            </a> */}
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -123,12 +123,12 @@ const Navbar = () => {
               </Link>
             ))}
             {/* Login button in mobile */}
-            <a
+            {/* <a
               href="#"
               className="px-6 py-3 rounded-full border-[2px] border-[#2a2e35] bg-[#1a1d23] backdrop-blur-xl text-[#aab7b8] font-medium text-base hover:border-white/50 hover:text-white transition-all duration-200 text-center hover:shadow-[0_0_15px_rgba(255,255,255,0.15),inset_0_0_15px_rgba(255,255,255,0.05)]"
             >
               Login
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
