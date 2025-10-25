@@ -1,16 +1,52 @@
 import React, { useState } from "react";
 
+// Core Team Members
+const coreTeam = [
+  {
+    id: 1,
+    name: "Saksham Gupta",
+    role: "Core Team Member",
+    img: "images/others/sakshamGupta.jpg",
+    socials: {
+      linkedin:
+        "https://www.linkedin.com/in/saksham-gupta-057669126?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram: "https://www.instagram.com/sakshamgupta2001/",
+    },
+  },
+  {
+    id: 2,
+    name: "Yatin Kumar",
+    role: "Core Team Member",
+    img: "images/others/YatinKumar.jpeg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/yatin-kumar-069861319/",
+      instagram: "https://www.instagram.com/yatin_1220/?hl=en",
+    },
+  },
+  {
+    id: 3,
+    name: "Shubham Jha",
+    role: "Core Team Member",
+    img: "images/others/ShubhamJha.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shubham-jha-a37a49263/",
+      instagram: "https://www.instagram.com/_shubham.2028/",
+    },
+  },
+];
+
+// Regular Team Members
 const sampleTeam = [
   {
     id: 1,
     name: "Dhananjay Bhardwaj",
-    role: "Event management ",
+    role: "Event Management ",
     img: "images/event/JayBhardwaj.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/dhananjay-bhardwaj-69775528a/",
       instagram: "https://www.instagram.com/jayybhardwaj.__/",
     },
-    group: "Event management",
+    group: "Event Management",
   },
   {
     id: 2,
@@ -39,18 +75,6 @@ const sampleTeam = [
   },
   {
     id: 4,
-    name: "Saksham Gupta",
-    role: "",
-    img: "images/others/sakshamGupta.jpg",
-    socials: {
-      linkedin:
-        "https://www.linkedin.com/in/saksham-gupta-057669126?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      instagram: "https://www.instagram.com/sakshamgupta2001/",
-    },
-    group: "",
-  },
-  {
-    id: 5,
     name: "Md Faisal Quaiyum",
     role: "Technical",
     img: "images/technical/Faisal.jpg",
@@ -59,9 +83,9 @@ const sampleTeam = [
       instagram: "https://www.instagram.com/faisalquaiyum/",
     },
     group: "Technical",
-  }, 
-   {
-    id: 6,
+  },
+  {
+    id: 5,
     name: "Dhruv Chetiwal",
     role: "Technical",
     img: "images/technical/Dhruv.jpg",
@@ -72,29 +96,7 @@ const sampleTeam = [
     group: "Technical",
   },
   {
-    id: 7,
-    name: "Yatin Kumar",
-    role: "",
-    img: "images/others/YatinKumar.jpeg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/yatin-kumar-069861319/",
-      instagram: "https://www.instagram.com/yatin_1220/?hl=en",
-    },
-    group: "",
-  },
-  {
-    id: 8,
-    name: "Shubham Jha",
-    role: "",
-    img: "images/others/ShubhamJha.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/shubham-jha-a37a49263/",
-      instagram: "https://www.instagram.com/_shubham.2028/",
-    },
-    group: "",
-  },
-  {
-    id: 9,
+    id: 6,
     name: "Gaurang Dhall",
     role: "Event Management",
     img: "images/event/GaurangDhall.jpg",
@@ -107,7 +109,7 @@ const sampleTeam = [
     group: "Event Management",
   },
   {
-    id: 10,
+    id: 7,
     name: "Ridhi Garg",
     role: "PR",
     img: "images/PR/ridhigargg.jpeg",
@@ -119,7 +121,7 @@ const sampleTeam = [
     group: "PR",
   },
   {
-    id: 11,
+    id: 8,
     name: "Abhishek gupta",
     role: "Technical",
     img: "images/technical/AbhishekGupta.jpg",
@@ -130,9 +132,9 @@ const sampleTeam = [
     group: "Technical",
   },
   {
-    id: 12,
+    id: 9,
     name: "Sukriti Chauhan",
-    role: "social media",
+    role: "Social Media",
     img: "images/social/SukritiShakuntala.jpg",
     socials: {
       linkedin:
@@ -143,17 +145,50 @@ const sampleTeam = [
     group: "Social",
   },
   {
-    id: 13,
+    id: 10,
     name: "Jatin Kumar",
     role: "Technical",
     img: "images/technical/jatinKumar.jpg",
     socials: {
-      linkedin:
-        "https://www.linkedin.com/in/jatin-kumar-a5655b30a",
-      instagram:
-        "https://www.instagram.com/ijatinydv",
+      linkedin: "https://www.linkedin.com/in/jatin-kumar-a5655b30a",
+      instagram: "https://www.instagram.com/ijatinydv",
     },
     group: "Technical",
+  },
+  {
+    id: 11,
+    name: "Shashwat Kumar",
+    role: "Social Media",
+    img: "images/social/ShashwatKumar.jpeg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/shashwat-kumar-86125b2b0",
+      instagram:
+        "https://www.instagram.com/shashwxt_k?igsh=a2Ixa3hzZzRiY2U1&utm_source=qr",
+    },
+    group: "Social",
+  },
+  {
+    id: 12,
+    name: "Rishu Singh",
+    role: "Event Management",
+    img: "images/event/RishuSingh.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/rishu-singh-18-06-2006-cst",
+      instagram:
+        "https://www.instagram.com/rishu_singh_18?igsh=MTRub3JtNDVlaGh1ZQ==",
+    },
+    group: "Event Management",
+  },
+  {
+    id: 13,
+    name: "Niyati Jain",
+    role: "Content",
+    img: "images/content/NiyatiJain.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/niyatijain3012",
+      instagram: "https://www.instagram.com/in/niyatij_12/",
+    },
+    group: "Content",
   },
 ];
 
@@ -204,7 +239,7 @@ function TeamCard({ member }) {
         <img
           src={member.img}
           alt={`${member.name}`}
-          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1d23] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
@@ -280,9 +315,10 @@ function FeaturedPanel({ item }) {
 const Teams = () => {
   const [filter, setFilter] = useState("All");
 
-  const filtered = sampleTeam.filter(
-    (m) => filter === "All" || m.group === filter
-  );
+  const filtered =
+    filter === "All"
+      ? sampleTeam
+      : sampleTeam.filter((m) => m.group === filter);
 
   return (
     <section className="min-h-screen bg-[#0a0b0f] text-gray-100 py-16 md:py-20">
@@ -298,11 +334,11 @@ const Teams = () => {
           </p>
         </header>
 
-        {/* Featured Leadership */}
+        {/* Faculty Section */}
         <div className="max-w-6xl mx-auto mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-            Leadership Team
-            {/* Leadership <span className="text-[#FF9900]">Team</span> */}
+            Faculty Coordinators
+            {/* Faculty <span className="text-[#FF9900]">Coordinators</span> */}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredData.map((item) => (
@@ -311,7 +347,22 @@ const Teams = () => {
           </div>
         </div>
 
-        {/* Filter Section */}
+        {/* Core Team Section */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+            Core Team
+            {/* Core <span className="text-[#FF9900]">Team</span> */}
+          </h2>
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl">
+              {coreTeam.map((member) => (
+                <TeamCard key={member.id} member={member} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Filter Section for Other Members */}
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-6">
             Our Members
@@ -324,7 +375,7 @@ const Teams = () => {
               "PR",
               "Content",
               "Event Management",
-              "Social",
+              "Social Media",
             ].map((category) => (
               <button
                 key={category}

@@ -97,7 +97,7 @@ const Feature = () => {
                 </p>
 
                 {/* Explore More Link */}
-                <div className="flex items-center gap-2 text-[#FF9900] font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* <div className="flex items-center gap-2 text-[#FF9900] font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span>Explore more</span>
                   <svg
                     className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -112,7 +112,7 @@ const Feature = () => {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
-                </div>
+                </div> */}
               </div>
 
               {/* Corner Accent */}
