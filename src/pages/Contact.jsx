@@ -208,9 +208,9 @@ const Contact = () => {
               </div>
               <h3 className="text-white font-semibold text-lg">Phone</h3>
               <p className="text-gray-400 text-sm">
-                +91-11-2757-1178
+                +91-8448186931
                 <br />
-                +91-11-2757-1179
+                +91-8448186942
               </p>
             </div>
 
@@ -221,9 +221,9 @@ const Contact = () => {
               </div>
               <h3 className="text-white font-semibold text-lg">Email</h3>
               <p className="text-gray-400 text-sm">
-                info@mait.ac.in
+                mait@mait.ac.in
                 <br />
-                admission@mait.ac.in
+                awsacademymait@gmail.com
               </p>
             </div>
 

@@ -92,7 +92,7 @@ const Footer = () => {
                 className="flex items-center gap-3 hover:text-white transition-colors duration-200"
               >
                 <FaEnvelope className="text-[#aab7b8] flex-shrink-0" />
-                <span>contact@awsxmait.com</span>
+                <span>awsacademymait@gmail.com</span>
               </a>
               <a
                 href="/contact"
