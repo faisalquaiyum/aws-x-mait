@@ -5,7 +5,7 @@ const coreTeam = [
   {
     id: 1,
     name: "Saksham Gupta",
-    role: "Core Team Member",
+    role: "President",
     img: "images/others/sakshamGupta.jpg",
     socials: {
       linkedin:
@@ -15,22 +15,22 @@ const coreTeam = [
   },
   {
     id: 2,
-    name: "Yatin Kumar",
-    role: "Core Team Member",
-    img: "images/others/YatinKumar.jpeg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/yatin-kumar-069861319/",
-      instagram: "https://www.instagram.com/yatin_1220/?hl=en",
-    },
-  },
-  {
-    id: 3,
     name: "Shubham Jha",
-    role: "Core Team Member",
+    role: "Vice President",
     img: "images/others/ShubhamJha.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/shubham-jha-a37a49263/",
       instagram: "https://www.instagram.com/_shubham.2028/",
+    },
+  },
+  {
+    id: 3,
+    name: "Yatin Kumar",
+    role: "Secretary",
+    img: "images/others/YatinKumar.jpeg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/yatin-kumar-069861319/",
+      instagram: "https://www.instagram.com/yatin_1220/?hl=en",
     },
   },
 ];
