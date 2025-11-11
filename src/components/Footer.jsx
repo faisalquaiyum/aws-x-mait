@@ -23,7 +23,7 @@ const Footer = () => {
     {
       icon: <FaLinkedin />,
       name: "LinkedIn",
-      url: "#",
+      url: "https://www.linkedin.com/company/aws-academy-mates/about/",
       color: "hover:text-blue-400",
     },
     {
