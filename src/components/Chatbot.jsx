@@ -26,24 +26,32 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = async (e) => {
-    e.preventDefault();
+  const quickReplies = [
+    "What is AWS?",
+    "How to join AWS×MAIT?",
+    "Upcoming events",
+    "AWS certifications",
+  ];
 
-    if (!inputMessage.trim() || isLoading) return;
+  const handleSendMessage = async (e, messageText = null) => {
+    if (e) e.preventDefault();
+
+    const textToSend = messageText || inputMessage;
+
+    if (!textToSend.trim() || isLoading) return;
 
     const userMessage = {
       role: "user",
-      content: inputMessage,
+      content: textToSend,
       timestamp: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    const messageToSend = inputMessage;
     setInputMessage("");
     setIsLoading(true);
 
     try {
-      const data = await fetchChatResponse(messageToSend);
+      const data = await fetchChatResponse(textToSend);
 
       if (data && data.reply) {
         const botMessage = {
@@ -68,6 +76,10 @@ const Chatbot = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleQuickReply = (reply) => {
+    handleSendMessage(null, reply);
   };
 
   return (
@@ -167,6 +179,22 @@ const Chatbot = () => {
               onSubmit={handleSendMessage}
               className="p-4 bg-[#1a1d23] border-t border-[#2a2e35]"
             >
+              {/* Quick Reply Chips */}
+              {messages.length <= 1 && !isLoading && (
+                <div className="mb-3 flex flex-wrap gap-2">
+                  {quickReplies.map((reply, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => handleQuickReply(reply)}
+                      className="bg-[#0a0b0f] hover:bg-[#FF9900] text-gray-300 hover:text-white text-xs sm:text-sm px-3 py-2 rounded-full border border-[#2a2e35] hover:border-[#FF9900] transition-all duration-200"
+                    >
+                      {reply}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               <div className="flex gap-2">
                 <input
                   type="text"
