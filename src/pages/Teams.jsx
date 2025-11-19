@@ -277,7 +277,6 @@ function TeamCard({ member }) {
     </article>
   );
 }
-
 function FeaturedPanel({ item }) {
   return (
     <div
