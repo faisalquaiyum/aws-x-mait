@@ -4,10 +4,10 @@ import { chatResponse } from "../controllers/chatController.js";
 
 const router = express.Router();
 
-// Rate limiting - 10 requests per minute per IP
+// Rate limiting - 14 requests per minute per IP
 const chatLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 10, // Max 10 requests per windowMs
+  max: 14, // Max 14 requests per windowMs
   message: {
     error: "Too many requests, please try again after a minute.",
   },

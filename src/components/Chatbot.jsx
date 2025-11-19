@@ -29,7 +29,7 @@ const Chatbot = () => {
   const quickReplies = [
     "What is AWS?",
     "How to join AWS×MAIT?",
-    "Upcoming events",
+    "Upcoming events AWS×MAIT",
     "AWS certifications",
   ];
 
@@ -65,11 +65,20 @@ const Chatbot = () => {
       }
     } catch (error) {
       console.error("Chat error:", error);
+
+      let errorContent;
+      if (error.response?.status === 429) {
+        errorContent =
+          "⏱️ Too many requests! Please wait a minute before sending more messages.";
+      } else {
+        errorContent =
+          error.response?.data?.error ||
+          "Sorry, I encountered an error. Please try again later.";
+      }
+
       const errorMessage = {
         role: "bot",
-        content:
-          error.response?.data?.error ||
-          "Sorry, I encountered an error. Please try again later.",
+        content: errorContent,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);
