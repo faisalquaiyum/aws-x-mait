@@ -9,7 +9,11 @@ const app = express();
 // Enable CORS for all routes - must be first
 app.use(
   cors({
-    origin: true, // Allow all origins temporarily for testing
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://aws-x-mait.vercel.app",
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
