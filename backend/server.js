@@ -6,20 +6,19 @@ import chatbotRoutes from "./routes/chatbotRoutes.js";
 dotenv.config();
 const app = express();
 
-// CORS must be before other middleware to handle preflight requests
+// Enable CORS for all routes - must be first
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "https://aws-x-mait.vercel.app",
-    ],
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: true, // Allow all origins temporarily for testing
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
     optionsSuccessStatus: 200,
   })
 );
+
+// Handle preflight requests explicitly
+app.options("*", cors());
 
 app.use(express.json());
 
