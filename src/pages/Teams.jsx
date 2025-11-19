@@ -37,17 +37,17 @@ const coreTeam = [
 
 // Regular Team Members
 const sampleTeam = [
-  {
-    id: 1,
-    name: "Dhananjay Bhardwaj",
-    role: "Event Management ",
-    img: "images/event/JayBhardwaj.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/dhananjay-bhardwaj-69775528a/",
-      instagram: "https://www.instagram.com/jayybhardwaj.__/",
-    },
-    group: "Event Management",
-  },
+  // {
+  //   id: 1,
+  //   name: "Dhananjay Bhardwaj",
+  //   role: "Event Management ",
+  //   img: "images/event/JayBhardwaj.jpg",
+  //   socials: {
+  //     linkedin: "https://www.linkedin.com/in/dhananjay-bhardwaj-69775528a/",
+  //     instagram: "https://www.instagram.com/jayybhardwaj.__/",
+  //   },
+  //   group: "Event Management",
+  // },
   {
     id: 2,
     name: "Pari Goel",
@@ -142,7 +142,7 @@ const sampleTeam = [
       instagram:
         "https://www.instagram.com/sukriti_95?igsh=MW8wODhzZWoyamkzNw==",
     },
-    group: "Social",
+    group: "Social Media",
   },
   {
     id: 10,
@@ -165,7 +165,7 @@ const sampleTeam = [
       instagram:
         "https://www.instagram.com/shashwxt_k?igsh=a2Ixa3hzZzRiY2U1&utm_source=qr",
     },
-    group: "Social",
+    group: "Social Media",
   },
   {
     id: 12,
@@ -277,7 +277,6 @@ function TeamCard({ member }) {
     </article>
   );
 }
-
 function FeaturedPanel({ item }) {
   return (
     <div
