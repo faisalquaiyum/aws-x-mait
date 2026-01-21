@@ -199,6 +199,9 @@ const featuredData = [
     role: "faculty",
     img: "images/faculty/drBhaskar.jpeg",
     desc: "Empowering students with mentorship that blends wisdom",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/dr-bhaskar-kapoor-6b4b7819/",
+    },
   },
   {
     id: 2,
@@ -206,6 +209,9 @@ const featuredData = [
     role: "faculty",
     img: "images/faculty/drBhoomi.jpeg",
     desc: "A communications lead who connects people and ideas",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/dr-bhoomi-gupta-3278a734/",
+    },
   },
   {
     id: 3,
@@ -213,6 +219,29 @@ const featuredData = [
     role: "faculty",
     img: "images/faculty/drMonika.jpeg",
     desc: "Organizes memorable experiences and events that leave a lasting impact",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/monika-bhardwaj-7709a3a9/",
+    },
+  },
+  {
+    id: 4,
+    name: "Vikas Mani Tripathi",
+    role: "faculty",
+    img: "images/faculty/vikasMani.jpg",
+    desc: "Guiding students with expertise and dedication",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/vikas-mani-tripathi/",
+    },
+  },
+  {
+    id: 5,
+    name: "Sanjana Deswal",
+    role: "faculty",
+    img: "images/faculty/sanjanaDeswal.jpg",
+    desc: "Inspiring excellence through innovative teaching and mentorship",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/sanjana-deswal-4b390616a/",
+    },
   },
 ];
 
@@ -306,6 +335,19 @@ function FeaturedPanel({ item }) {
             {item.desc}
           </p>
         </div>
+        {item.socials?.linkedin && (
+          <div className="flex gap-3">
+            <a
+              href={item.socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-9 h-9 bg-[#2a2e35] hover:bg-[#FF9900] rounded-md flex items-center justify-center text-[#aab7b8] hover:text-white transition-all duration-200"
+            >
+              <IconLinkedIn />
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
