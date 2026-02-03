@@ -84,17 +84,17 @@ const sampleTeam = [
     },
     group: "Technical",
   },
-  {
-    id: 5,
-    name: "Dhruv Chetiwal",
-    role: "Technical",
-    img: "images/technical/Dhruv.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/dhruv-chetiwal-197809371/",
-      instagram: "https://www.instagram.com/dhruv_chetiwal_/",
-    },
-    group: "Technical",
-  },
+  // {
+  //   id: 5,
+  //   name: "Dhruv Chetiwal",
+  //   role: "Technical",
+  //   img: "images/technical/Dhruv.jpg",
+  //   socials: {
+  //     linkedin: "https://www.linkedin.com/in/dhruv-chetiwal-197809371/",
+  //     instagram: "https://www.instagram.com/dhruv_chetiwal_/",
+  //   },
+  //   group: "Technical",
+  // },
   {
     id: 6,
     name: "Gaurang Dhall",
@@ -144,17 +144,17 @@ const sampleTeam = [
     },
     group: "Social Media",
   },
-  {
-    id: 10,
-    name: "Jatin Kumar",
-    role: "Technical",
-    img: "images/technical/jatinKumar.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/jatin-kumar-a5655b30a",
-      instagram: "https://www.instagram.com/ijatinydv",
-    },
-    group: "Technical",
-  },
+  // {
+  //   id: 10,
+  //   name: "Jatin Kumar",
+  //   role: "Technical",
+  //   img: "images/technical/jatinKumar.jpg",
+  //   socials: {
+  //     linkedin: "https://www.linkedin.com/in/jatin-kumar-a5655b30a",
+  //     instagram: "https://www.instagram.com/ijatinydv",
+  //   },
+  //   group: "Technical",
+  // },
   {
     id: 11,
     name: "Shashwat Kumar",

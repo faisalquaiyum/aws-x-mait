@@ -14,10 +14,29 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 15s linear infinite;
   }
 
   .animate-scroll-left:hover {
     animation-play-state: paused;
+  }
+
+  /* Responsive animation speeds */
+  @media (min-width: 640px) {
+    .animate-scroll-left {
+      animation: scroll-left 20s linear infinite;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .animate-scroll-left {
+      animation: scroll-left 25s linear infinite;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .animate-scroll-left {
+      animation: scroll-left 30s linear infinite;
+    }
   }
 }
